@@ -118,8 +118,11 @@
     group: staff
     mode: 2775
 
-- name: Copy PowerShell modules
-  copy:
-    src: "{{ empire_dir }}/lib/powershell/Invoke-Obfuscation"
-    dest: /usr/local/share/powershell/Modules/Invoke-Obfuscation
-    remote_src: true
+# Ansible 2.8 will support recursive copying with remote_src
+# - name: Copy Invoke-Obfuscation PowerShell modules
+#   copy:
+#     src: "{{ empire_dir }}/lib/powershell/Invoke-Obfuscation"
+#     dest: /usr/local/share/powershell/Modules/Invoke-Obfuscation
+#     remote_src: true
+- name: Copy Invoke-Obfuscation PowerShell modules
+  command: cp -R {{ empire_dir }}/lib/powershell/Invoke-Obfuscation /usr/local/share/powershell/Modules/
