@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Ian Esplin
+  description: Empire Project for Kali
+  license: MIT
+  min_ansible_version: 2.5
+  platforms:
+    - name: Kali
+      versions:
+        - rolling
+  galaxy_tags: []
+
+dependencies:
+  - ansible-role-powershell
