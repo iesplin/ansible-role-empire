@@ -16,4 +16,7 @@ empire_apt_dependencies:
   - swig
   - zlib1g-dev
 
+empire_repo_url: "https://github.com/EmpireProject/Empire.git"
+empire_repo_version: master
+
 empire_xar_version: "1.5.2"
