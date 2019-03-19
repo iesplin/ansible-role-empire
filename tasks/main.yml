@@ -12,7 +12,6 @@
     dest: "{{ empire_dir }}"
     version: "{{ empire_repo_version }}"
     force: true
-  changed_when: false
   register: clone_empire
 
 - block:
@@ -129,4 +128,4 @@
     #     remote_src: true
     - name: Copy Invoke-Obfuscation PowerShell modules
       command: cp -R {{ empire_dir }}/lib/powershell/Invoke-Obfuscation /usr/local/share/powershell/Modules/
-  when: "clone_empire.before != clone_empire.after"
+  when: "clone_empire is changed"
